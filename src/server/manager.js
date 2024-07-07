@@ -6,6 +6,13 @@ e.messageTypes = ["ack", "request", "message", "symmetricKey"];
 e.messages = {}; // property: channelName, value { from, to, date, type }
 e.channels = {}; // property: channelName, value: { name, p2p, adminUserId, users[] }
 
+e.resetData = function () {
+    e.clients = {};
+    e.messages = {};
+    e.channels = {};
+    console.log("All data has been reset.");
+};
+
 // generate 16 char length GUID
 e.generateGuid = function () {
     return Math.random().toString(36).substring(2, 10) +

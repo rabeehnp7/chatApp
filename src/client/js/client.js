@@ -358,7 +358,10 @@ function newMessage() {
 
 	// get channel symmetric key and encrypt message
 	var chatSymmetricKey = getChannels()[currentChannelName].channelKey;
+
+	console.log("Original message:", message); // Log the original message
 	var msg = message.symEncrypt(chatSymmetricKey)
+	console.log("Encrypted message:", msg); // Log the encrypted message
 
 	// Send the message to the chat channel
 	socket.emit('msg', { msg: msg, from: getMe().id, to: currentChannelName, avatar: getMe().avatar });
@@ -384,7 +387,10 @@ function appendMessage(data) {
 
 	// get this channel symmetric key to decrypt message
 	var symmetricKey = getChannels()[currentChannelName].channelKey;
+
+	console.log("Received encrypted message:", data.msg); // Log the encrypted message
 	var msg = data.msg.symDecrypt(symmetricKey)
+	console.log("Decrypted message:", msg); // Log the decrypted message
 
 	// add to self screen
 	var messagesScreen = $(".messages");

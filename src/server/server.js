@@ -25,6 +25,7 @@ var loginExpireTime = 3600 * 1000; // 3600sec
 
 // Export a function, so that we can pass 
 // the app and io instances from the app.js file:
+manager.resetData();
 module.exports = function (app, io) {
     // Initialize a new socket.io application, named 'chat'
     chat = io;
