@@ -2,9 +2,9 @@
   "name": "secure_chat",
   "version": "0.0.2",
   "description": "Realtime secure chat system",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node src/app.js"
   },
   "keywords": [
     "node",
